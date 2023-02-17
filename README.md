@@ -1,6 +1,6 @@
 # Vax Pet
----
-## Colaboradores
+
+### Colaboradores
 | Nombre | Carnet | Github |
 | ----- | ----- | ------ |
 | Fernando Xavier Maldonado Canjura | MC190018 | [XavierCanjura](https://github.com/XavierCanjura) | 
@@ -9,12 +9,12 @@
 | Oscar Danilo Rivera Bernal | RB130430 | [danilo95](https://github.com/danilo95) |
 | Samuel Alejandro Granados González | GG150384 | [ggsgranados](https://github.com/ggsgranados) |
 
-## Enlaces 
+### Enlaces 
 ---
 - [Moskups de APP](https://www.figma.com/file/7vUHBJnzUf5xDEFCaYiXto/Dise%C3%B1o-de-VaxPet?node-id=0%3A1&t=2ZQ1MVIRwKiFvIdK-0)
 - [Notion](https://meteor-nut-4a6.notion.site/Vax-Pet-dcef583536994951ba1de6ce6344ba3a)
 
-## Licencia
+### Licencia
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">**Licencia Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internaciona**l</a>.
 
