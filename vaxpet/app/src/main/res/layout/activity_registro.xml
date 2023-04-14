@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".RegistroActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="59dp"
+        tools:layout_editor_absoluteY="357dp">
+
+        <TextView
+            android:id="@+id/text010"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:text="@string/cuenta_nueva"
+            android:textColor="@color/black"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:text="@string/nombres"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="489dp" />
+
+        <EditText
+            android:id="@+id/nombres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="400dp"
+            android:height="40dp"
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="#FFFAFA"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:minHeight="40dp"
+            android:padding="10dp"
+            tools:layout_editor_absoluteX="23dp"
+            tools:layout_editor_absoluteY="504dp" />
+
+        <TextView
+            android:id="@+id/text02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:text="@string/apellidos"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="489dp" />
+
+        <EditText
+            android:id="@+id/apellidos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="400dp"
+            android:height="40dp"
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="#FFFAFA"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:minHeight="40dp"
+            android:padding="10dp"
+            tools:layout_editor_absoluteX="23dp"
+            tools:layout_editor_absoluteY="504dp" />
+
+        <TextView
+            android:id="@+id/text03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:text="@string/telefono"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="489dp" />
+
+        <EditText
+            android:id="@+id/telefono"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="400dp"
+            android:height="40dp"
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="#FFFAFA"
+            android:ems="10"
+            android:inputType="number"
+            android:minHeight="40dp"
+            android:padding="10dp"
+            tools:layout_editor_absoluteX="23dp"
+            tools:layout_editor_absoluteY="504dp" />
+
+        <TextView
+            android:id="@+id/text04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:text="Correo Electronico"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="489dp" />
+
+        <EditText
+            android:id="@+id/correo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="400dp"
+            android:height="40dp"
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="#FFFAFA"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:minHeight="40dp"
+            android:padding="10dp"
+            tools:layout_editor_absoluteX="23dp"
+            tools:layout_editor_absoluteY="504dp" />
+
+        <TextView
+            android:id="@+id/text05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:text="Contraseña"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="489dp" />
+
+        <EditText
+            android:id="@+id/contrasena01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="400dp"
+            android:height="40dp"
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="#FFFAFA"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:minHeight="40dp"
+            android:padding="10dp"
+            tools:layout_editor_absoluteX="23dp"
+            tools:layout_editor_absoluteY="504dp" />
+
+        <TextView
+            android:id="@+id/text06"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:text="Confirmar Contraseña"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="489dp" />
+
+        <EditText
+            android:id="@+id/contrasena02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="400dp"
+            android:height="40dp"
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="#FFFAFA"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:minHeight="40dp"
+            android:padding="10dp"
+            tools:layout_editor_absoluteX="23dp"
+            tools:layout_editor_absoluteY="504dp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="530dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="59dp"
+        tools:layout_editor_absoluteY="357dp">
+
+        <android.widget.Button
+            android:id="@+id/registrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_rounded_corner"
+            android:backgroundTint="@color/pink"
+            android:minWidth="226dp"
+            android:text="@string/registrar"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="650dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="59dp"
+        tools:layout_editor_absoluteY="357dp">
+
+        <android.widget.Button
+            android:id="@+id/cancelar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_rounded_corner"
+            android:backgroundTint="@color/brown"
+            android:minWidth="226dp"
+            android:text="@string/cancelar"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
