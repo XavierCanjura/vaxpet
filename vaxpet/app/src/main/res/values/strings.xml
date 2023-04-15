@@ -2,6 +2,7 @@
     <string name="app_name">VaxPet</string>
     <string name="correo_electronico">Correo Electronico</string>
     <string name="contrase_a">Contraseña</string>
+    <string name="confirmar_contrase_a">Confirmar Contraseña</string>
     <string name="iniciar_sesi_n">Iniciar Sesión</string>
     <string name="nombres">Nombres</string>
     <string name="apellidos">Apellidos</string>
