@@ -1,18 +1,25 @@
 package com.example.vaxpet
 
+import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import com.example.desafiopractico2.usuarioData
 import com.example.vaxpet.databinding.ActivityRegistroBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.storage.FirebaseStorage
+import java.net.URI
 
 class RegistroActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegistroBinding
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var ImageUri: Uri
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +35,10 @@ class RegistroActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.selecionarImagen.setOnClickListener {
+            launchGallery()
+        }
+
         binding.registrar.setOnClickListener {
             val nombres = binding.nombres.text.toString();
             val apellidos = binding.apellidos.text.toString();
@@ -35,7 +46,7 @@ class RegistroActivity : AppCompatActivity() {
             val correo = binding.correo.text.toString()
             val contraseña01 = binding.contrasena01.text.toString()
             val contraseña02 = binding.contrasena02.text.toString()
-
+            ImageUri = Uri.parse("")
             //para objeto de la database
             var usuarioData: usuarioData
             usuarioData = usuarioData()
@@ -83,6 +94,8 @@ class RegistroActivity : AppCompatActivity() {
                 firebaseAuth.createUserWithEmailAndPassword(correo, contraseña01)
                     .addOnCompleteListener {
                         if (it.isSuccessful) {
+
+                            uploadIamge()
                             usuarioData.setid(it.getResult().user?.uid.toString()) //guardo uid del usuariorecien creado
                             firebaseReference.child("usuarios").push().setValue(usuarioData)
                                 .addOnCompleteListener {
@@ -106,7 +119,7 @@ class RegistroActivity : AppCompatActivity() {
                         } else {
                             Toast.makeText(
                                 this,
-                                "No se pudo crear la autenticacion el usuario, por favor intenta mas tarde",
+                                "No se pudo crear la autenticacion el usuario, por favor intenta mas tarde" + it.exception.toString(),
                                 Toast.LENGTH_LONG
                             ).show()
                         }
@@ -114,4 +127,31 @@ class RegistroActivity : AppCompatActivity() {
             }
         }
     }
+
+    private fun uploadIamge() {
+        if (!Uri.EMPTY.equals(ImageUri)) {
+            val random = java.util.Random()
+            val fileName = "image00-" + random.nextInt().toString()
+            val storageReference = FirebaseStorage.getInstance().getReference("images/" + fileName)
+            storageReference.putFile(ImageUri).addOnSuccessListener {
+            }
+        }
+
+    }
+
+    private fun launchGallery() {
+        val intent = Intent()
+        intent.type = "images/*"
+        intent.action = Intent.ACTION_GET_CONTENT
+        startActivityForResult(intent, 100)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 100 && resultCode == RESULT_OK) {
+            ImageUri = data?.data!!
+            binding.imageView.setImageURI(ImageUri)
+        }
+    }
+
 }

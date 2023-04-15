@@ -2,12 +2,7 @@ package com.example.desafiopractico2
 
 public class usuarioData {
 
-/* val nombres = binding.nombres.text.toString();
-            val apellidos = binding.apellidos.text.toString();
-            val telefono = binding.telefono.text.toString()
-            val correo = binding.correo.text.toString()
-            val contraseña01 = binding.contrasena01.text.toString()
-            val contraseña02 = binding.contrasena02.text.toString()*/
+
     private var nombres: String? = null
     private var apellidos: String? = null
     private var telefono: String? = null
@@ -32,7 +27,7 @@ public class usuarioData {
         this.nombres = nombres
     }
 
-    fun getmapellidos(): String? {
+    fun getapellidos(): String? {
         return apellidos
     }
 
@@ -48,7 +43,7 @@ public class usuarioData {
         this.telefono = telefono
     }
 
-    fun getmcorreo(): String? {
+    fun getcorreo(): String? {
         return correo
     }
 
