@@ -4,8 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.desafiopractico2.usuarioData
 import com.example.vaxpet.databinding.ActivityRegistroBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 
 class RegistroActivity : AppCompatActivity() {
 
@@ -18,6 +20,8 @@ class RegistroActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         firebaseAuth = FirebaseAuth.getInstance()
+        var firebaseDatabase = FirebaseDatabase.getInstance()
+        var firebaseReference = firebaseDatabase.getReference()
 
         binding.cancelar.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
@@ -31,6 +35,10 @@ class RegistroActivity : AppCompatActivity() {
             val correo = binding.correo.text.toString()
             val contraseña01 = binding.contrasena01.text.toString()
             val contraseña02 = binding.contrasena02.text.toString()
+
+            //para objeto de la database
+            var usuarioData: usuarioData
+            usuarioData = usuarioData()
 
             fun validarDatos(): Boolean {
                 var esValido: Boolean = true;
@@ -63,21 +71,42 @@ class RegistroActivity : AppCompatActivity() {
             }
 
             if (validarDatos()) {
+                //aca creo objeto para guardar en la database
+                usuarioData.setnombres(nombres)
+                usuarioData.setapellidos(apellidos)
+                usuarioData.settelefono(telefono)
+                usuarioData.setcontraseña(contraseña01)
+                usuarioData.setcorreo(correo)
+
+
                 //aca hago creacion del usuario de autenticacion
                 firebaseAuth.createUserWithEmailAndPassword(correo, contraseña01)
                     .addOnCompleteListener {
                         if (it.isSuccessful) {
-                            Toast.makeText(
-                                this,
-                                "Usuario Registrado, por favor inicia sesion",
-                                Toast.LENGTH_LONG
-                            ).show()
+                            usuarioData.setid(it.getResult().user?.uid.toString()) //guardo uid del usuariorecien creado
+                            firebaseReference.child("usuarios").push().setValue(usuarioData)
+                                .addOnCompleteListener {
+                                    if (it.isSuccessful) {
+                                        Toast.makeText(
+                                            this,
+                                            "Usuario Registrado, por favor inicia sesion",
+                                            Toast.LENGTH_LONG
+                                        ).show()
+                                    } else {
+                                        Toast.makeText(
+                                            this,
+                                            "No se pudo registrar el usuario, por favor intenta mas tarde",
+                                            Toast.LENGTH_LONG
+                                        ).show()
+                                    }
+                                }
+
                             val intent = Intent(this, LoginActivity::class.java)
                             startActivity(intent)
                         } else {
                             Toast.makeText(
                                 this,
-                                "No se pudo registrare el usuario, por favor intenta mas tarde",
+                                "No se pudo crear la autenticacion el usuario, por favor intenta mas tarde",
                                 Toast.LENGTH_LONG
                             ).show()
                         }
