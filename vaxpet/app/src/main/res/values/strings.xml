@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">VaxPet</string>
+    <string name="correo_electronico">Correo Electronico</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="iniciar_sesi_n">Iniciar Sesión</string>
+    <string name="nombres">Nombres</string>
+    <string name="apellidos">Apellidos</string>
+    <string name="telefono">Telefono</string>
+    <string name="registrar">Registrar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="crear_cuenta">Crear Cuenta</string>
+    <string name="cuenta_nueva">Cuenta Nueva</string>
 </resources>
