@@ -1,15 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:padding="20dp"
     tools:context=".Perfil">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Perfil"
-        android:layout_gravity="center" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--imagen-->
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/perfil1"
+                />
+
+            <Button
+                android:id="@+id/atras"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:drawableLeft="@drawable/Back"
+                />
+
+        </FrameLayout>
+
+
+        <!--nombre + editar-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Nombre"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnEditar"
+                android:layout_width="44dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="240dp"
+                android:background="@drawable/editar"
+                android:backgroundTint="@color/black"
+                />
+        </LinearLayout>
+
+        <!--edad y raza-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="7dp"
+            >
+
+            <TextView
+                android:id="@+id/añodevida"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:background="@drawable/rounded_corner"
+                android:backgroundTint="@color/edad"
+                android:text="1 año"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/razapet"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="8dp"
+                android:background="@drawable/rounded_corner"
+                android:layout_marginStart="10dp"
+                android:backgroundTint="@color/raza"
+                android:text="Husky Siberiano"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <!--descripcioon-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            >
+
+            <TextView
+                android:id="@+id/descripcion"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="8dp"
+                android:layout_marginStart="10dp"
+                android:backgroundTint="@color/raza"
+                android:text="The kindest Samoyed we've ever met. Likes to play with balls, is friends with other animals. Despite the white color, he loves rain and puddles."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <!--boton de vacuna-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_horizontal"
+            >
+
+            <Button
+                android:id="@+id/vacuna"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:backgroundTint="@color/pink"
+                android:minWidth="226dp"
+                android:text="Vacunas"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:cornerRadius="20dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </FrameLayout>
