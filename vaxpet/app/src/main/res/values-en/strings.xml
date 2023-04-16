@@ -12,4 +12,12 @@
     <string name="cancelar">Cancel</string>
     <string name="crear_cuenta">Create Account</string>
     <string name="cuenta_nueva">New Account</string>
+
+    <string name="nombre_mascota">Pet Name</string>
+    <string name="raza">Pet Breed</string>
+    <string name="sexo">Genre</string>
+    <string name="fecha_nacimiento">Birthdate</string>
+    <string name="Descripcion">Description</string>
+    <string name="guardar">Save</string>
+    <string name="actualizar">Update</string>
 </resources>
