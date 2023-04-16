@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "115404690883",
+    "project_id": "vaxpet-5ff55",
+    "storage_bucket": "vaxpet-5ff55.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:115404690883:android:d4229f9ac97c314b5d1976",
+        "android_client_info": {
+          "package_name": "com.example.vaxpet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "115404690883-42nqmujnqvq5t0soa5ad09223c7r7ov0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCw4KaHPs5lNFGXchtHZR3-IfUPYfw4An0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "115404690883-42nqmujnqvq5t0soa5ad09223c7r7ov0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

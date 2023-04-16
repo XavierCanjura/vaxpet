@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">VaxPet</string>
+    <string name="correo_electronico">Email</string>
+    <string name="contrase_a">Password</string>
+    <string name="confirmar_contrase_a">Confirm Password</string>
+    <string name="iniciar_sesi_n">Login</string>
+    <string name="nombres">Name</string>
+    <string name="apellidos">Last Name</string>
+    <string name="telefono">Telephone</string>
+    <string name="registrar">Register</string>
+    <string name="cancelar">Cancel</string>
+    <string name="crear_cuenta">Create Account</string>
+    <string name="cuenta_nueva">New Account</string>
+</resources>
