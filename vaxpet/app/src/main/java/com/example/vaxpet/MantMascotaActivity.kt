@@ -37,6 +37,9 @@ class MantMascotaActivity : AppCompatActivity() {
         binding = ActivityMantMascotaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        idPropietario = intent.getStringExtra("idPropietario").toString()
+        isCreate = intent.getBooleanExtra("isCreate", true)
+
         firebaseDatabase = FirebaseDatabase.getInstance()
 
         if (isCreate) {
