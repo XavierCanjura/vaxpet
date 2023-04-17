@@ -24,6 +24,11 @@ class mascotaData {
         this.imagen = imagen
     }
 
+    fun getPath(): String{
+        return "https://firebasestorage.googleapis.com/v0/b/vaxpet-5ff55.appspot.com/o/images%2Fpet%2F${this.imagen}?alt=media"
+
+    }
+
 
     // Getter and Setter Methods
     // For id

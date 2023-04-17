@@ -20,7 +20,7 @@ class MantMascotaActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMantMascotaBinding
     private lateinit var firebaseDatabase: FirebaseDatabase
 
-    private var id: String = "1681626882272"
+    private var id: String = ""
     private var idPropietario: String = ""
     private var nombre: String = ""
     private var raza: String = ""
@@ -28,9 +28,9 @@ class MantMascotaActivity : AppCompatActivity() {
     private var fecha_nacimiento: String = ""
     private var descripcion: String = ""
     private var imagen: String = ""
-    private lateinit var imageUri: Uri
+    private var imageUri: Uri = Uri.EMPTY
 
-    private var isCreate: Boolean = false
+    private var isCreate: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +38,10 @@ class MantMascotaActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         idPropietario = intent.getStringExtra("idPropietario").toString()
+        id = intent.getStringExtra("idMascota").toString()
         isCreate = intent.getBooleanExtra("isCreate", true)
+
+        Log.d("Id", id)
 
         firebaseDatabase = FirebaseDatabase.getInstance()
 
@@ -47,8 +50,6 @@ class MantMascotaActivity : AppCompatActivity() {
         } else {
             binding.btRegistrar.setText(R.string.actualizar)
             obtenerMascota()
-
-            binding.etNombreMascota.setText(nombre)
         }
 
         // Cuando se da click en registrar
@@ -76,7 +77,8 @@ class MantMascotaActivity : AppCompatActivity() {
                 startActivity(intent)
             } else {
                 // Regresar a perfil de mascota
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, PerfilMascotaActivity::class.java)
+                intent.putExtra("idMascota", id)
                 startActivity(intent)
             }
             finish()
@@ -134,8 +136,9 @@ class MantMascotaActivity : AppCompatActivity() {
                             binding.etFechaNacimiento.setText(data.getFechaNacimiento().toString())
                             binding.etDescripcion.setText(data.getDescripcion().toString())
                             Glide.with(this@MantMascotaActivity)
-                                .load("https://firebasestorage.googleapis.com/v0/b/vaxpet-5ff55.appspot.com/o/images%2Fpet%2Fpet00--1569130601?alt=media")
+                                .load(data.getPath())
                                 .into(binding.ivMascotaImage)
+                            imagen = data.getImagen()!!
                         }
                     }
                 }
@@ -163,7 +166,7 @@ class MantMascotaActivity : AppCompatActivity() {
         mascotaData.setDescripcion(descripcion)
         mascotaData.setImagen(imagen)
 
-        firebaseDatabase.getReference().child("mascotas").push().setValue(mascotaData)
+        firebaseDatabase.getReference().child("mascotas").child(mascotaData.getId().toString()).setValue(mascotaData)
             .addOnCompleteListener {
                 if (it.isSuccessful) {
                     Toast.makeText(this, "Mascota registrada correctamente", Toast.LENGTH_SHORT)
@@ -182,7 +185,36 @@ class MantMascotaActivity : AppCompatActivity() {
     }
 
     private fun updateMascota() {
-        firebaseDatabase.getReference().child("mascotas").child("")
+        var mascotaData: mascotaData
+        mascotaData = mascotaData()
+
+        uploadImage()
+
+        mascotaData.setId(id)
+        mascotaData.setIdPropietario("HRm1DvtEODVFwwuL6ffSr5LfR9b2")
+        mascotaData.setNombre(nombre)
+        mascotaData.setRaza(raza)
+        mascotaData.setSexo(sexo)
+        mascotaData.setFechaNacimiento(fecha_nacimiento)
+        mascotaData.setDescripcion(descripcion)
+        mascotaData.setImagen(imagen)
+
+        firebaseDatabase.getReference().child("mascotas").child(id).setValue(mascotaData)
+            .addOnCompleteListener {
+                if (it.isSuccessful) {
+                    Toast.makeText(this, "Informacion actualizada correctamente", Toast.LENGTH_SHORT)
+                        .show()
+                    var intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                } else {
+                    Toast.makeText(
+                        this,
+                        "Ocurrio un problema al actualizar la informacion de la mascota, intentelo mas tarde",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
     }
 
     private fun uploadImage() {
