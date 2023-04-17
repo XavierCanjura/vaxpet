@@ -19,4 +19,19 @@
     <string name="Descripcion">Descripcion</string>
     <string name="guardar">Guardar</string>
     <string name="actualizar">Actualizar</string>
+
+    <string name="btnCerrarSesion">Cerrar Sesión</string>
+    <string name="btnEditarCuenta">Editar cuenta</string>
+    <string name="tvNombres">Nombres</string>
+    <string name="tvapellidos">Apellidos</string>
+    <string name="tvtelefono">Teléfono</string>
+    <string name="tvCorreoElectronico">Correo Electrónico</string>
+    <string name="tvContrasena">Contraseña</string>
+    <string name="tvConfirmarContrasena">Confirmar contraseña</string>
+    <string name="btnGuardarEditarPerfil">Guardar</string>
+    <string name="txtSeleccionarFoto">Seleccione una foto</string>
+    <string name="hintCorreoElectronico">Ingrese su correo electrónico</string>
+    <string name="hintTelefono">Ingrese su número de teléfono</string>
+    <string name="hintApellido">Ingrese su apellido</string>
+    <string name="hintNombre">Ingrese su nombre</string>
 </resources>

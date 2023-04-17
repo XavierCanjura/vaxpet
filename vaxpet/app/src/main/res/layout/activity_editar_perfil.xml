@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DADADA"
+    tools:context=".EditarPerfil">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="74dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="36dp"
+            android:paddingTop="10dp"
+            android:paddingRight="36dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="-166dp">
+
+            <Button
+                android:id="@+id/btnEditarCuentaAtras"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="57dp"
+                android:layout_marginTop="5dp"
+                android:drawableLeft="@android:drawable/ic_menu_revert"
+                android:fontFamily="@font/inter_bold"
+                android:text="@string/btnEditarCuenta"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:cornerRadius="8dp"
+                app:strokeColor="#DADADA" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imgUsuario"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
+                app:srcCompat="@drawable/logo" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:paddingTop="10dp"
+                android:text="@string/txtSeleccionarFoto"
+                android:textAlignment="center"
+                android:textColor="@color/bluetext"
+                android:textSize="16sp"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/tvNombres"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="27dp"
+                android:fontFamily="@font/inter_bold"
+                android:text="@string/tvNombres"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/txtNombres"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/style_borde_editext"
+                android:backgroundTint="@color/editBlanco"
+                android:ems="10"
+                android:fontFamily="@font/inter"
+                android:inputType="textPersonName"
+                android:hint="@string/hintNombre"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvApellidos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:fontFamily="@font/inter_bold"
+                android:text="@string/tvapellidos"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/txtApellidos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/style_borde_editext"
+                android:backgroundTint="@color/editBlanco"
+                android:ems="10"
+                android:fontFamily="@font/inter"
+                android:inputType="textPersonName"
+                android:hint="@string/hintApellido"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvTelefono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:fontFamily="@font/inter_bold"
+                android:text="@string/tvtelefono"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/txtTelefono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/style_borde_editext"
+                android:backgroundTint="@color/editBlanco"
+                android:ems="10"
+                android:fontFamily="@font/inter"
+                android:inputType="phone"
+                android:hint="@string/hintTelefono"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvCorreoElectronico"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:fontFamily="@font/inter_bold"
+                android:text="@string/tvCorreoElectronico"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/txtCorreoElectronico"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/style_borde_editext"
+                android:backgroundTint="@color/editBlanco"
+                android:ems="10"
+                android:fontFamily="@font/inter"
+                android:inputType="textEmailAddress"
+                android:hint="@string/hintCorreoElectronico"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvContrasena"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:fontFamily="@font/inter_bold"
+                android:text="@string/tvContrasena"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/txtContrasena"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/style_borde_editext"
+                android:backgroundTint="@color/editBlanco"
+                android:ems="10"
+                android:fontFamily="@font/inter"
+                android:inputType="textPassword"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvConfirmarContrasena"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:fontFamily="@font/inter_bold"
+                android:text="@string/tvConfirmarContrasena"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/txtConfirmarContrasena"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/style_borde_editext"
+                android:backgroundTint="@color/editBlanco"
+                android:ems="10"
+                android:fontFamily="@font/inter"
+                android:inputType="textPassword"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btnGuardarEditarUsuario"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="193dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="37dp"
+                android:layout_marginBottom="21dp"
+                android:backgroundTint="@color/Salmon"
+                android:fontFamily="@font/baloo_chettan"
+                android:text="@string/btnGuardarEditarPerfil"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:cornerRadius="100dp" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
