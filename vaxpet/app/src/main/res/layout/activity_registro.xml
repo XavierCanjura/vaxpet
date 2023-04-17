@@ -32,32 +32,35 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:layout_marginBottom="8dp"
             android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="70dp"
-                android:minHeight="50dp"
-                android:layout_marginRight="50dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/image_rounded"
+                android:layout_marginLeft="30dp"
                 android:clipToOutline="true"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:minHeight="50dp"
+                tools:srcCompat="@drawable/user" />
 
             <ImageButton
                 android:id="@+id/selecionarImagen"
                 android:layout_width="wrap_content"
+                android:layout_marginLeft="30dp"
                 android:layout_height="60dp"
                 android:background="@null"
                 android:onClick="saludo"
                 app:srcCompat="@drawable/btn_img" />
         </LinearLayout>
 
+        <!--nombres-->
         <TextView
             android:id="@+id/text01"
+            android:paddingStart="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="14dp"
+            android:layout_marginBottom="5dp"
             android:text="@string/nombres"
             android:textColor="@color/black"
             android:textSize="16dp"
@@ -67,24 +70,25 @@
 
         <EditText
             android:id="@+id/nombres"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="400dp"
+            android:width="330dp"
             android:height="40dp"
             android:background="@drawable/rounded_corner"
             android:backgroundTint="#FFFAFA"
             android:ems="10"
             android:inputType="textPersonName"
-            android:minHeight="40dp"
             android:padding="10dp"
-            tools:layout_editor_absoluteX="23dp"
-            tools:layout_editor_absoluteY="504dp" />
+            />
 
         <TextView
             android:id="@+id/text02"
+            android:paddingStart="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="14dp"
+            android:layout_marginBottom="5dp"
             android:text="@string/apellidos"
             android:textColor="@color/black"
             android:textSize="16dp"
@@ -94,9 +98,11 @@
 
         <EditText
             android:id="@+id/apellidos"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="400dp"
+            android:width="330dp"
             android:height="40dp"
             android:background="@drawable/rounded_corner"
             android:backgroundTint="#FFFAFA"
@@ -109,9 +115,10 @@
 
         <TextView
             android:id="@+id/text03"
+            android:paddingStart="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="14dp"
+            android:layout_marginBottom="5dp"
             android:text="@string/telefono"
             android:textColor="@color/black"
             android:textSize="16dp"
@@ -121,9 +128,11 @@
 
         <EditText
             android:id="@+id/telefono"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="400dp"
+            android:width="330dp"
             android:height="40dp"
             android:background="@drawable/rounded_corner"
             android:backgroundTint="#FFFAFA"
@@ -136,9 +145,10 @@
 
         <TextView
             android:id="@+id/text04"
+            android:paddingStart="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="14dp"
+            android:layout_marginBottom="5dp"
             android:text="@string/correo_electronico"
             android:textColor="@color/black"
             android:textSize="16dp"
@@ -148,9 +158,11 @@
 
         <EditText
             android:id="@+id/correo"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="400dp"
+            android:width="330dp"
             android:height="40dp"
             android:background="@drawable/rounded_corner"
             android:backgroundTint="#FFFAFA"
@@ -163,9 +175,10 @@
 
         <TextView
             android:id="@+id/text05"
+            android:paddingStart="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="14dp"
+            android:layout_marginBottom="5dp"
             android:text="@string/contrase_a"
             android:textColor="@color/black"
             android:textSize="16dp"
@@ -175,9 +188,11 @@
 
         <EditText
             android:id="@+id/contrasena01"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="400dp"
+            android:width="330dp"
             android:height="40dp"
             android:background="@drawable/rounded_corner"
             android:backgroundTint="#FFFAFA"
@@ -190,9 +205,10 @@
 
         <TextView
             android:id="@+id/text06"
+            android:paddingStart="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="14dp"
+            android:layout_marginBottom="5dp"
             android:text="@string/confirmar_contrase_a"
             android:textColor="@color/black"
             android:textSize="16dp"
@@ -202,9 +218,10 @@
 
         <EditText
             android:id="@+id/contrasena02"
+            android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="400dp"
+            android:width="330dp"
             android:height="40dp"
             android:background="@drawable/rounded_corner"
             android:backgroundTint="#FFFAFA"
@@ -221,7 +238,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="530dp"
+        android:layout_marginTop="520dp"
         android:gravity="center"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="59dp"
@@ -243,7 +260,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="650dp"
+        android:layout_marginTop="630dp"
         android:gravity="center"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="59dp"

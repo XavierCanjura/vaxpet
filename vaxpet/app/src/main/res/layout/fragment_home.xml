@@ -3,13 +3,102 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="20dp"
+    android:background="@color/gray"
     tools:context=".Home">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VaxPet"
+            android:textColor="@color/black"
+            android:textSize="34sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!--inicial el principal-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="50dp"
+
+        >
+
+        <!--tab de todo, perros, gatos-->
+        <LinearLayout
+            android:id="@+id/tabs_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="7dp"
+            >
+
+            <Button
+                android:id="@+id/tabTodo"
+                android:layout_width="115dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="4dp"
+                android:backgroundTint="@color/pink"
+                android:drawableLeft="@drawable/todot"
+                android:text="Todo"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:cornerRadius="20dp" />
+
+            <Button
+                android:id="@+id/tabPerro"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="4dp"
+                android:backgroundTint="@color/gray"
+                android:drawableLeft="@drawable/perrot"
+                android:text="Perro"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:cornerRadius="20dp" />
+
+            <Button
+                android:id="@+id/tabGato"
+                android:layout_width="115dp"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/gray"
+                android:drawableLeft="@drawable/gatot"
+                android:text="Gato"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:cornerRadius="20dp" />
+        </LinearLayout>
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvListadoMascotas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/mascota_item"/>
+
+    </LinearLayout>
+    <!--terminar el principal-->
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Home"
-        android:layout_gravity="center" />
+        android:backgroundTint="@color/pink"
+        android:layout_gravity="bottom|end"
+        android:src="@drawable/tab"
+        android:layout_margin="5dp"/>
 
 </FrameLayout>

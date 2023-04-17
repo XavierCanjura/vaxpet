@@ -9,8 +9,11 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#3C6CA7</color>
     <color name="brown">#703A44</color>
-    <color name="gray">#ACACAC</color>
+    <color name="gray">#DADADA</color>
     <color name="pink">#F2968F</color>
+    <color name="edad">#FFEBCD</color>
+    <color name="raza">#E0CDFF</color>
+
     <color name="btnGris">#EDEAEA</color>
     <color name="contornoGris">#9D9D9D</color>
     <color name="editBlanco">#FFFAFA</color>

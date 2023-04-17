@@ -11,6 +11,15 @@
     <string name="cancelar">Cancelar</string>
     <string name="crear_cuenta">Crear Cuenta</string>
     <string name="cuenta_nueva">Cuenta Nueva</string>
+
+    <string name="nombre_mascota">Nombre de la mascota</string>
+    <string name="raza">Raza</string>
+    <string name="sexo">Sexo</string>
+    <string name="fecha_nacimiento">Fecha de Nacimiento</string>
+    <string name="Descripcion">Descripcion</string>
+    <string name="guardar">Guardar</string>
+    <string name="actualizar">Actualizar</string>
+
     <string name="btnCerrarSesion">Cerrar Sesión</string>
     <string name="btnEditarCuenta">Editar cuenta</string>
     <string name="tvNombres">Nombres</string>
