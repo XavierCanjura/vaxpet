@@ -11,6 +11,18 @@
     <string name="cancelar">Cancelar</string>
     <string name="crear_cuenta">Crear Cuenta</string>
     <string name="cuenta_nueva">Cuenta Nueva</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btnCerrarSesion">Cerrar Sesión</string>
+    <string name="btnEditarCuenta">Editar cuenta</string>
+    <string name="tvNombres">Nombres</string>
+    <string name="tvapellidos">Apellidos</string>
+    <string name="tvtelefono">Teléfono</string>
+    <string name="tvCorreoElectronico">Correo Electrónico</string>
+    <string name="tvContrasena">Contraseña</string>
+    <string name="tvConfirmarContrasena">Confirmar contraseña</string>
+    <string name="btnGuardarEditarPerfil">Guardar</string>
+    <string name="txtSeleccionarFoto">Seleccione una foto</string>
+    <string name="hintCorreoElectronico">Ingrese su correo electrónico</string>
+    <string name="hintTelefono">Ingrese su número de teléfono</string>
+    <string name="hintApellido">Ingrese su apellido</string>
+    <string name="hintNombre">Ingrese su nombre</string>
 </resources>

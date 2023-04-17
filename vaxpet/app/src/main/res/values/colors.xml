@@ -11,4 +11,9 @@
     <color name="brown">#703A44</color>
     <color name="gray">#ACACAC</color>
     <color name="pink">#F2968F</color>
+    <color name="btnGris">#EDEAEA</color>
+    <color name="contornoGris">#9D9D9D</color>
+    <color name="editBlanco">#FFFAFA</color>
+    <color name="Salmon">#F2968F</color>
+    <color name="bluetext">#4c77ac</color>
 </resources>
