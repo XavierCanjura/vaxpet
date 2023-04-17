@@ -1,59 +1,102 @@
 package com.example.vaxpet
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
+import com.example.desafiopractico2.usuarioData
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [Perfil.newInstance] factory method to
- * create an instance of this fragment.
- */
+
+
 class Perfil : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    private lateinit var database: DatabaseReference
+    private lateinit var auth: FirebaseAuth
+    private lateinit var currentUserID: String
+    private lateinit var txtUsuario: TextView
+
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val view = inflater.inflate(R.layout.fragment_perfil, container, false)
+        txtUsuario = view.findViewById<View>(R.id.txtUsuario) as TextView
+
+
+        // Inicializar la instancia de Firebase Auth y obtener el ID del usuario actual
+        auth = FirebaseAuth.getInstance()
+        currentUserID = auth.currentUser!!.uid
+
+        // Inicializar la instancia de Firebase Database
+        database = FirebaseDatabase.getInstance().getReference()
+
+        //Recorriendo los nodos
+        database.child("usuarios").addValueEventListener(object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val sb = StringBuilder()
+
+                for (userSnapshot in snapshot.children) {
+
+                    val user = userSnapshot.getValue(usuarioData::class.java)
+
+                    if (currentUserID == user?.getid()){
+                        val nombres = user?.getnombres()
+                        val apellidos = user?.getapellidos()
+                        sb.append("$nombres")
+                        sb.append(" ")
+                        sb.append("$apellidos")
+
+                        txtUsuario.text = sb.toString()
+                    }
+                }
+        }
+
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+        })
+
+
+
+        //Obtiene referencia de botón.
+        val btnEditarCuenta = view.findViewById<View>(R.id.btnEditarCuenta) as Button
+        val btnCerrarSesion = view.findViewById<View>(R.id.btnCerrarSesion) as Button
+
+        //Asigna listener para poder abrir Activity.
+        btnEditarCuenta.setOnClickListener{ view: View ->
+            val intent = Intent (activity , EditarPerfil::class.java)
+            activity?.startActivity(intent)
+        }
+
+        //Asigna listener para cerrar sesion.
+        btnCerrarSesion.setOnClickListener{ view: View ->
+
+            FirebaseAuth.getInstance().signOut().also {
+
+                getActivity()?.onBackPressed()
+
+            }
+        }
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_perfil, container, false)
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Perfil.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Perfil().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }
