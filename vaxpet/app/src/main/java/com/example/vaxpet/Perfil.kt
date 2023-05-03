@@ -2,17 +2,19 @@ package com.example.vaxpet
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.os.LocaleListCompat
+import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
 import com.example.desafiopractico2.usuarioData
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-
-
+import java.util.*
 
 
 class Perfil : Fragment() {
@@ -23,13 +25,10 @@ class Perfil : Fragment() {
     private lateinit var txtUsuario: TextView
 
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
     }
-
 
 
     override fun onCreateView(
@@ -48,7 +47,7 @@ class Perfil : Fragment() {
         database = FirebaseDatabase.getInstance().getReference()
 
         //Recorriendo los nodos
-        database.child("usuarios").addValueEventListener(object : ValueEventListener{
+        database.child("usuarios").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val sb = StringBuilder()
 
@@ -56,7 +55,7 @@ class Perfil : Fragment() {
 
                     val user = userSnapshot.getValue(usuarioData::class.java)
 
-                    if (currentUserID == user?.getid()){
+                    if (currentUserID == user?.getid()) {
                         val nombres = user?.getnombres()
                         val apellidos = user?.getapellidos()
                         sb.append("$nombres")
@@ -66,7 +65,7 @@ class Perfil : Fragment() {
                         txtUsuario.text = sb.toString()
                     }
                 }
-        }
+            }
 
             override fun onCancelled(error: DatabaseError) {
 
@@ -74,19 +73,30 @@ class Perfil : Fragment() {
         })
 
 
-
         //Obtiene referencia de botón.
         val btnEditarCuenta = view.findViewById<View>(R.id.btnEditarCuenta) as Button
         val btnCerrarSesion = view.findViewById<View>(R.id.btnCerrarSesion) as Button
+        val btnIngles = view.findViewById<View>(R.id.idiomaIngles) as Button
+        val btnEspañol = view.findViewById<View>(R.id.idiomaEspanol) as Button
+        val currentLocale = Locale.getDefault().getLanguage()
+
 
         //Asigna listener para poder abrir Activity.
-        btnEditarCuenta.setOnClickListener{ view: View ->
-            val intent = Intent (activity , EditarPerfil::class.java)
+        btnEditarCuenta.setOnClickListener { view: View ->
+            val intent = Intent(activity, EditarPerfil::class.java)
             activity?.startActivity(intent)
         }
 
+        btnIngles.setOnClickListener { view: View ->
+            selecionarIdioma("en")
+        }
+
+        btnEspañol.setOnClickListener { view: View ->
+            selecionarIdioma("es")
+        }
+
         //Asigna listener para cerrar sesion.
-        btnCerrarSesion.setOnClickListener{ view: View ->
+        btnCerrarSesion.setOnClickListener { view: View ->
 
             FirebaseAuth.getInstance().signOut().also {
 
@@ -95,8 +105,18 @@ class Perfil : Fragment() {
             }
         }
 
+
         // Inflate the layout for this fragment
         return view
     }
+
+    private fun selecionarIdioma(language_code: String) {
+        val appLocale: LocaleListCompat =
+            LocaleListCompat.forLanguageTags(language_code)
+
+        AppCompatDelegate.setApplicationLocales(appLocale)
+
+    }
+
 
 }

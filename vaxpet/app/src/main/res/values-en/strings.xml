@@ -35,4 +35,13 @@
     <string name="hintTelefono">Enter your phone number</string>
     <string name="hintApellido">Enter your last name</string>
     <string name="hintNombre">Enter your first name</string>
+    <string name="favoritos">Favorites</string>
+    <string name="citas">Dates</string>
+    <string name="perfil">Profile</string>
+    <string name="todo">All</string>
+    <string name="gato">Cats</string>
+    <string name="perro">Dogs</string>
+    <string name="activar_idioma_ingles">Activate English language</string>
+    <string name="activar_idioma_espa_ol">Activate Spanish language</string>
+
 </resources>

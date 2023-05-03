@@ -51,6 +51,40 @@
             app:cornerRadius="8dp"
             app:strokeColor="@color/contornoGris" />
 
+
+        <Button
+            android:id="@+id/idiomaIngles"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:layout_marginTop="23dp"
+            android:backgroundTint="@color/btnGris"
+            android:fontFamily="@font/inter_semibold"
+            android:text="@string/activar_idioma_ingles"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:cornerRadius="8dp"
+            app:strokeColor="@color/contornoGris" />
+
+        <Button
+            android:id="@+id/idiomaEspanol"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:layout_marginTop="23dp"
+            android:backgroundTint="@color/btnGris"
+            android:fontFamily="@font/inter_semibold"
+            android:text="@string/activar_idioma_espa_ol"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:cornerRadius="8dp"
+            app:strokeColor="@color/contornoGris" />
+
+
         <Button
             android:id="@+id/btnCerrarSesion"
             style="?attr/materialButtonOutlinedStyle"
