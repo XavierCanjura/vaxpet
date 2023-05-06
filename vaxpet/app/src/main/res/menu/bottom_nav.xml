@@ -5,9 +5,9 @@
         android:id="@+id/home"
         android:icon="@drawable/baseline_home_24"/>
 
-    <item android:title="@string/favoritos"
-        android:id="@+id/favoritos"
-        android:icon="@drawable/baseline_star_border_24"/>
+<!--    <item android:title="@string/favoritos"-->
+<!--        android:id="@+id/favoritos"-->
+<!--        android:icon="@drawable/baseline_star_border_24"/>-->
 
     <item android:title="@string/citas"
         android:id="@+id/citas"

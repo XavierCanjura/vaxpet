@@ -42,4 +42,8 @@
     <string name="todo">Todo</string>
     <string name="perro">Perro</string>
     <string name="gato">Gato</string>
+
+    <string name="regresar">Ir al Inicio</string>
+    <string name="eslogan">Para huellitas sanas</string>
+    <string name="comenzar">Comenzar</string>
 </resources>

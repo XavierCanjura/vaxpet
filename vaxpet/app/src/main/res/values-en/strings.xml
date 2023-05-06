@@ -44,4 +44,7 @@
     <string name="activar_idioma_ingles">Activate English language</string>
     <string name="activar_idioma_espa_ol">Activate Spanish language</string>
 
+    <string name="regresar">Go to Home</string>
+    <string name="eslogan">Para huellitas sanas</string>
+    <string name="comenzar">Start</string>
 </resources>
