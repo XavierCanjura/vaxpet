@@ -5,15 +5,15 @@
         android:id="@+id/home"
         android:icon="@drawable/baseline_home_24"/>
 
-    <item android:title="Favoritos"
+    <item android:title="@string/favoritos"
         android:id="@+id/favoritos"
         android:icon="@drawable/baseline_star_border_24"/>
 
-    <item android:title="Citas"
+    <item android:title="@string/citas"
         android:id="@+id/citas"
         android:icon="@drawable/baseline_calendar_month_24"/>
 
-    <item android:title="Perfil"
+    <item android:title="@string/perfil"
         android:id="@+id/perfil"
         android:icon="@drawable/baseline_person_24"/>
 </menu>
