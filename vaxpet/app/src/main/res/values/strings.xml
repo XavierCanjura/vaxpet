@@ -34,4 +34,5 @@
     <string name="hintTelefono">Ingrese su número de teléfono</string>
     <string name="hintApellido">Ingrese su apellido</string>
     <string name="hintNombre">Ingrese su nombre</string>
+    <string name="ingresar_con_google">Ingresar con Google</string>
 </resources>
