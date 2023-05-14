@@ -14,6 +14,7 @@
     <string name="cuenta_nueva">New Account</string>
 
     <string name="nombre_mascota">Pet Name</string>
+    <string name="tipo">Pet type</string>
     <string name="raza">Pet Breed</string>
     <string name="sexo">Genre</string>
     <string name="fecha_nacimiento">Birthdate</string>
