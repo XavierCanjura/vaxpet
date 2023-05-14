@@ -17,7 +17,7 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="350dp"
-            app:cornerRadius="20dp">
+            >
 
             <ImageView
                 android:id="@+id/ivFotoMascota"

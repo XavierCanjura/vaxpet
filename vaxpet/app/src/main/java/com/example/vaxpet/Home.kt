@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -50,11 +51,7 @@ class Home : Fragment() {
         var auth = FirebaseAuth.getInstance()
         idPropietario = auth.currentUser?.uid.toString()
 
-        viewModel = ViewModelProvider(this)[MascotaViewModel::class.java]
-        viewModel.getMascotasByPropietario(idPropietario)
-        viewModel.observerCartLiveData().observe(viewLifecycleOwner, Observer { mascotaList ->
-            mascotaAdapter?.setMascotaList(mascotaList)
-        })
+        getMascotas(idPropietario, null) // this
 
         binding.fab.setOnClickListener {
             val intent = Intent(context, MantMascotaActivity::class.java)
@@ -63,8 +60,56 @@ class Home : Fragment() {
             startActivity(intent)
         }
 
+        binding.tabPerro.setOnClickListener {
+            getMascotas(idPropietario, "Perro")
+        }
+
+        binding.tabGato.setOnClickListener {
+            getMascotas(idPropietario, "Gato")
+        }
+
+        binding.tabTodo.setOnClickListener {
+            getMascotas(idPropietario, null)
+        }
+
         // Inflate the layout for this fragment
         return view
+    }
+
+    private fun getMascotas(idPropietario: String, tipo: String?) {
+        viewModel = ViewModelProvider(this)[MascotaViewModel::class.java]
+        viewModel.getMascotasByPropietario(idPropietario, tipo)
+        viewModel.observerCartLiveData().observe(viewLifecycleOwner, Observer { mascotaList ->
+            mascotaAdapter?.setMascotaList(mascotaList)
+        })
+
+        binding.tabTodo.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.gray))
+        binding.tabPerro.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.gray))
+        binding.tabGato.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.gray))
+
+        if(tipo == "Perro") {
+            binding.tabPerro.setBackgroundColor(
+                ContextCompat.getColor(
+                    requireContext(),
+                    R.color.pink
+                )
+            )
+        } else if(tipo == "Gato") {
+            binding.tabGato.setBackgroundColor(
+                ContextCompat.getColor(
+                    requireContext(),
+                    R.color.pink
+                )
+            )
+        } else {
+            binding.tabTodo.setBackgroundColor(
+                ContextCompat.getColor(
+                    requireContext(),
+                    R.color.pink
+                )
+            )
+        }
+
     }
 
     private fun initRecyclerView() {
