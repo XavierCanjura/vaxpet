@@ -13,6 +13,7 @@
     <string name="cuenta_nueva">Cuenta Nueva</string>
 
     <string name="nombre_mascota">Nombre de la mascota</string>
+    <string name="tipo">Tipo de mascota</string>
     <string name="raza">Raza</string>
     <string name="sexo">Sexo</string>
     <string name="fecha_nacimiento">Fecha de Nacimiento</string>
