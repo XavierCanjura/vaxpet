@@ -22,7 +22,7 @@
             android:layout_gravity="center"
             android:scaleType="centerCrop"
             app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
-            app:srcCompat="@drawable/logo" />
+            app:srcCompat="@drawable/logopink" />
 
         <TextView
             android:id="@+id/txtUsuario"

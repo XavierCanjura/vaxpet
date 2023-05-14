@@ -48,7 +48,7 @@
                 android:layout_marginTop="25dp"
                 android:scaleType="centerCrop"
                 app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
-                app:srcCompat="@drawable/logo" />
+                app:srcCompat="@drawable/logopink" />
 
             <TextView
                 android:id="@+id/textView"
