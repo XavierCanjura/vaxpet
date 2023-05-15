@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".Citas">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="59dp"
+        tools:layout_editor_absoluteY="357dp">
+
+
+        <TextView
+            android:id="@+id/addCita"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Crear Cita"
+            android:textColor="@color/black"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/elegeMascota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Elige tu mascota"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:orientation="horizontal">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvListadoMascotas"
+                android:layout_width="wrap_content"
+                android:layout_height="257dp"
+                tools:listitem="@layout/mascota_item" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--nombres-->
+            <TextView
+                android:id="@+id/text01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:layout_marginTop="5dp"
+                android:text="Elige el tipo de consulta"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="31dp"
+                tools:layout_editor_absoluteY="489dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <!-- checkboxs -->
+                <CheckBox
+                    android:id="@+id/chkbaño"
+                    android:layout_width="209dp"
+                    android:layout_height="38dp"
+                    android:layout_weight="1"
+                    android:drawableStart="@drawable/bath"
+                    android:text=" Baño" />
+                <CheckBox
+                    android:id="@+id/chkCorte"
+                    android:layout_width="209dp"
+                    android:layout_height="38dp"
+                    android:layout_weight="1"
+                    android:drawableStart="@drawable/corte"
+                    android:text=" Corte de cabello" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <CheckBox
+                    android:id="@+id/chkVacunas"
+                    android:layout_width="209dp"
+                    android:layout_height="38dp"
+                    android:layout_weight="1"
+                    android:drawableStart="@drawable/vacuna"
+                    app:srcCompat="@drawable/calendar"
+                    android:text=" Vacunas" />
+                <CheckBox
+                    android:id="@+id/chkDesparacitacion"
+                    android:layout_width="209dp"
+                    android:layout_height="38dp"
+                    android:layout_weight="1"
+                    android:drawableStart="@drawable/desparacitacion"
+                    android:text=" Desparacitación" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <!--hora-->
+            <TextView
+                android:id="@+id/horario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:text="Elige un hora"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="31dp"
+                tools:layout_editor_absoluteY="489dp" />
+
+            <EditText
+                android:id="@+id/Time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="10:00 a.m"
+                android:inputType="time" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--fecha-->
+            <TextView
+                android:id="@+id/fecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:text="Elige una fecha"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="31dp"
+                tools:layout_editor_absoluteY="489dp" />
+
+            <EditText
+                android:id="@+id/Date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="01/01/2021"
+                android:inputType="date" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="364dp"
+            android:layout_height="111dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <android.widget.Button
+                android:id="@+id/registrar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_rounded_corner"
+                android:backgroundTint="@color/pink"
+                android:minWidth="226dp"
+                android:text="@string/registrar"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <android.widget.Button
+                android:id="@+id/cancelar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/button_rounded_corner"
+                android:backgroundTint="@color/brown"
+                android:minWidth="226dp"
+                android:text="@string/cancelar"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

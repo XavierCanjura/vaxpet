@@ -1,5 +1,6 @@
 package com.example.vaxpet.viewmodels
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -14,7 +15,7 @@ class MascotaViewModel: ViewModel() {
 
     var firebaseDatabase = FirebaseDatabase.getInstance()
 
-    fun getMascotasByPropietario(idPropietario: String){
+    fun getMascotasByPropietario(idPropietario: String, tipo: String? = null){
         firebaseDatabase.getReference("mascotas").addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if(snapshot.exists()){
@@ -24,7 +25,11 @@ class MascotaViewModel: ViewModel() {
 
                     var mascotasByPropietario: MutableList<mascotaData> = ArrayList()
                     for (mascota in mascotas){
-                        if(mascota.getIdPropietario() == idPropietario){
+                        if(tipo != null && mascota.getTipo() != tipo){
+                            continue
+                        }
+
+                        if(mascota.getIdPropietario() == idPropietario || true){// temporal para probar
                             mascotasByPropietario.add(mascota)
                         }
                     }
