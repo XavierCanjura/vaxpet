@@ -102,7 +102,8 @@ class MantMascotaActivity : AppCompatActivity() {
     }
 
     fun onDateSelected(day: Int, month: Int, year: Int){
-        binding.etFechaNacimiento.setText("$day/$month/$year")
+        val monthNow = month+1
+        binding.etFechaNacimiento.setText("$day/$monthNow/$year")
     }
 
 
@@ -211,7 +212,7 @@ class MantMascotaActivity : AppCompatActivity() {
         uploadImage()
 
         mascotaData.setId(id)
-        mascotaData.setIdPropietario("HRm1DvtEODVFwwuL6ffSr5LfR9b2")
+        mascotaData.setIdPropietario(idPropietario)
         mascotaData.setNombre(nombre)
         mascotaData.setRaza(raza)
         mascotaData.setSexo(sexo)

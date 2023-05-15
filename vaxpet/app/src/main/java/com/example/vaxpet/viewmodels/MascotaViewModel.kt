@@ -29,7 +29,7 @@ class MascotaViewModel: ViewModel() {
                             continue
                         }
 
-                        if(mascota.getIdPropietario() == idPropietario || true){// temporal para probar
+                        if(mascota.getIdPropietario() == idPropietario){
                             mascotasByPropietario.add(mascota)
                         }
                     }

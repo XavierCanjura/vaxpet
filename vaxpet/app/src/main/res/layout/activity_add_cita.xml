@@ -27,38 +27,48 @@
             android:textSize="24dp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/elegeMascota"
+        <ImageView
+            android:id="@+id/ivFotoMascotascota"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Elige tu mascota"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/perro1"
+            android:layout_marginTop="15dp"/>
+
+        <TextView
+            android:id="@+id/tvMascotaName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
             android:textColor="@color/black"
-            android:textSize="16dp"
-            android:textStyle="bold" />
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="240dp"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/rvListadoMascotas"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="257dp"-->
+<!--                tools:listitem="@layout/mascota_item" />-->
+<!--        </LinearLayout>-->
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="240dp"
-            android:orientation="horizontal">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvListadoMascotas"
-                android:layout_width="wrap_content"
-                android:layout_height="257dp"
-                tools:listitem="@layout/mascota_item" />
-        </LinearLayout>
-
-        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
 
             <!--nombres-->
             <TextView
                 android:id="@+id/text01"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingStart="20dp"
                 android:layout_marginTop="5dp"
                 android:text="Elige el tipo de consulta"
                 android:textColor="@color/black"
@@ -74,7 +84,7 @@
                 >
                 <!-- checkboxs -->
                 <CheckBox
-                    android:id="@+id/chkbaño"
+                    android:id="@+id/chkBanio"
                     android:layout_width="209dp"
                     android:layout_height="38dp"
                     android:layout_weight="1"
@@ -89,28 +99,28 @@
                     android:text=" Corte de cabello" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal"-->
+<!--                >-->
 
-                <CheckBox
-                    android:id="@+id/chkVacunas"
-                    android:layout_width="209dp"
-                    android:layout_height="38dp"
-                    android:layout_weight="1"
-                    android:drawableStart="@drawable/vacuna"
-                    app:srcCompat="@drawable/calendar"
-                    android:text=" Vacunas" />
-                <CheckBox
-                    android:id="@+id/chkDesparacitacion"
-                    android:layout_width="209dp"
-                    android:layout_height="38dp"
-                    android:layout_weight="1"
-                    android:drawableStart="@drawable/desparacitacion"
-                    android:text=" Desparacitación" />
-            </LinearLayout>
+<!--                <CheckBox-->
+<!--                    android:id="@+id/chkVacunas"-->
+<!--                    android:layout_width="209dp"-->
+<!--                    android:layout_height="38dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:drawableStart="@drawable/vacuna"-->
+<!--                    app:srcCompat="@drawable/calendar"-->
+<!--                    android:text=" Vacunas" />-->
+<!--                <CheckBox-->
+<!--                    android:id="@+id/chkDesparacitacion"-->
+<!--                    android:layout_width="209dp"-->
+<!--                    android:layout_height="38dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:drawableStart="@drawable/desparacitacion"-->
+<!--                    android:text=" Desparacitación" />-->
+<!--            </LinearLayout>-->
 
         </LinearLayout>
 
@@ -134,7 +144,7 @@
                 tools:layout_editor_absoluteY="489dp" />
 
             <EditText
-                android:id="@+id/Time"
+                android:id="@+id/etTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -150,7 +160,7 @@
 
             <!--fecha-->
             <TextView
-                android:id="@+id/fecha"
+                android:id="@+id/Fecha"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingStart="20dp"
@@ -162,19 +172,21 @@
                 tools:layout_editor_absoluteY="489dp" />
 
             <EditText
-                android:id="@+id/Date"
+                android:id="@+id/etDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="01/01/2021"
+                android:clickable="false"
+                android:focusable="false"
                 android:inputType="date" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="364dp"
-            android:layout_height="111dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:layout_gravity="center"
             android:gravity="center"
             android:orientation="vertical">
 
