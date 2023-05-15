@@ -51,7 +51,7 @@
                 android:layout_height="60dp"
                 android:background="@null"
                 android:onClick="saludo"
-                app:srcCompat="@drawable/btnimg" />
+                app:srcCompat="@drawable/btn_img" />
         </LinearLayout>
 
         <!--nombres-->

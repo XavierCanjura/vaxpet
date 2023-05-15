@@ -43,6 +43,12 @@ class PerfilMascotaActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+
+        binding.citas.setOnClickListener {
+            val intent = Intent(this, AddCitaActivity::class.java)
+            intent.putExtra("idMascota", idMascota)
+            startActivity(intent)
+        }
     }
 
     fun getMascotaById(){

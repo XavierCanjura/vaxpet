@@ -50,7 +50,7 @@
                 android:layout_height="60dp"
                 android:background="@null"
                 android:onClick="saludo"
-                app:srcCompat="@drawable/btnimg" />
+                app:srcCompat="@drawable/btn_img" />
         </LinearLayout>
 
         <!--nombre-->
@@ -77,6 +77,32 @@
             android:backgroundTint="#FFFAFA"
             android:paddingLeft="15dp"
             tools:text="Hola" />
+
+        <!--tipo-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tipo"
+            android:paddingStart="20dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"/>
+
+        <EditText
+            android:id="@+id/etTipo"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="330dp"
+            android:height="40dp"
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="#FFFAFA"
+            android:paddingLeft="15dp"
+            tools:text="Hola"
+            />
 
         <!--raza-->
         <TextView
@@ -148,10 +174,12 @@
             android:background="@drawable/rounded_corner"
             android:backgroundTint="#FFFAFA"
             android:layout_gravity="center_horizontal"
-            android:elevation="10dp"
-            android:inputType="date|datetime"
+            android:inputType="date"
             android:paddingLeft="15dp"
+            android:clickable="false"
+            android:focusable="false"
             tools:text="Hola" />
+
 
         <!--descripcion-->
         <TextView
@@ -169,7 +197,7 @@
             android:id="@+id/etDescripcion"
             android:layout_width="330dp"
             android:layout_height="wrap_content"
-           android:layout_marginStart="20dp"
+            android:layout_marginStart="20dp"
             android:background="@drawable/rounded_corner"
             android:backgroundTint="#FFFAFA"
             android:inputType="textMultiLine"

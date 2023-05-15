@@ -13,6 +13,7 @@
     <string name="cuenta_nueva">Cuenta Nueva</string>
 
     <string name="nombre_mascota">Nombre de la mascota</string>
+    <string name="tipo">Tipo de mascota</string>
     <string name="raza">Raza</string>
     <string name="sexo">Sexo</string>
     <string name="fecha_nacimiento">Fecha de Nacimiento</string>
@@ -34,6 +35,7 @@
     <string name="hintTelefono">Ingrese su número de teléfono</string>
     <string name="hintApellido">Ingrese su apellido</string>
     <string name="hintNombre">Ingrese su nombre</string>
+    <string name="ingresar_con_google">Ingresar con Google</string>
     <string name="activar_idioma_ingles">Activar Idioma Ingles</string>
     <string name="favoritos">Favoritos</string>
     <string name="citas">Citas</string>

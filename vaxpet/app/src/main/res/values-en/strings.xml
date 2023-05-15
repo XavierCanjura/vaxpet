@@ -14,6 +14,7 @@
     <string name="cuenta_nueva">New Account</string>
 
     <string name="nombre_mascota">Pet Name</string>
+    <string name="tipo">Pet type</string>
     <string name="raza">Pet Breed</string>
     <string name="sexo">Genre</string>
     <string name="fecha_nacimiento">Birthdate</string>
@@ -35,6 +36,7 @@
     <string name="hintTelefono">Enter your phone number</string>
     <string name="hintApellido">Enter your last name</string>
     <string name="hintNombre">Enter your first name</string>
+    <string name="ingresar_con_google">Sing in with Google</string>
     <string name="favoritos">Favorites</string>
     <string name="citas">Dates</string>
     <string name="perfil">Profile</string>
