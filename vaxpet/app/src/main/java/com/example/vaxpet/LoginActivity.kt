@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import com.example.desafiopractico2.usuarioData
 import com.example.vaxpet.databinding.ActivityLoginBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -15,12 +16,13 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.database.FirebaseDatabase
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
     private lateinit var firebaseAuth: FirebaseAuth
-    private lateinit var googleSignInClient : GoogleSignInClient
+    private lateinit var googleSignInClient: GoogleSignInClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
             .requestEmail()
             .build()
 
-        googleSignInClient = GoogleSignIn.getClient(this,gso)
+        googleSignInClient = GoogleSignIn.getClient(this, gso)
 
         binding.sesionGoogle.setOnClickListener {
             signInGoogle()
@@ -99,39 +101,72 @@ class LoginActivity : AppCompatActivity() {
         launcher.launch(sighInIntent)
     }
 
-    private val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
-        result ->
-        if (result.resultCode == Activity.RESULT_OK){
-            val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
-            handleResult(task)
+    private val launcher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
+                handleResult(task)
+            }
         }
-    }
 
     //Manejo de resultado si ya se tiene una cuenta de Google asociada
     private fun handleResult(task: Task<GoogleSignInAccount>) {
-        if (task.isSuccessful){
-            val account : GoogleSignInAccount? = task.result
-            if (account != null){
+        if (task.isSuccessful) {
+            val account: GoogleSignInAccount? = task.result
+            if (account != null) {
                 updateUI(account)
             }
-        }
-        else{
-            Toast.makeText(this,task.exception.toString(),Toast.LENGTH_LONG).show()
+        } else {
+            Toast.makeText(this, task.exception.toString(), Toast.LENGTH_LONG).show()
         }
     }
 
     //Funcion que realiza el inicio de sesion y manda a llamar a la MainActivity a mostrar
     private fun updateUI(account: GoogleSignInAccount) {
-        val credential = GoogleAuthProvider.getCredential(account.idToken,null)
+        val credential = GoogleAuthProvider.getCredential(account.idToken, null)
+        var firebaseDatabase = FirebaseDatabase.getInstance()
+        var firebaseReference = firebaseDatabase.getReference()
         firebaseAuth.signInWithCredential(credential).addOnCompleteListener {
-            if (it.isSuccessful){
-                val intent : Intent = Intent(this,MainActivity::class.java)
-                intent.putExtra("name",account.displayName)
-                startActivity(intent)
-            }
-            else{
-                Toast.makeText(this,it.exception.toString(),Toast.LENGTH_LONG).show()
+            if (it.isSuccessful) {
+                val intent: Intent = Intent(this, MainActivity::class.java)
+                intent.putExtra("name", account.displayName)
+                //para objeto de la database
+                var usuarioData: usuarioData
+                usuarioData = usuarioData()
+                //aca creo objeto para guardar en la database
+                usuarioData.setnombres(account.displayName)
+                usuarioData.setcorreo(account.email)
+                //aca hago creacion del usuario de autenticacion
+                firebaseAuth.createUserWithEmailAndPassword(
+                    account.email.toString(),
+                    "123456"
+                )
+                    .addOnCompleteListener {
+                        if (it.isSuccessful) {
+                            usuarioData.setid(it.getResult().user?.uid.toString()) //guardo uid del usuariorecien creado
+                            firebaseReference.child("usuarios").push().setValue(usuarioData)
+                                .addOnCompleteListener {
+                                    if (it.isSuccessful) {
+                                        Toast.makeText(
+                                            this,
+                                            "Usuario Registrado, por favor inicia sesion",
+                                            Toast.LENGTH_LONG
+                                        ).show()
+                                    } else {
+                                        Toast.makeText(
+                                            this,
+                                            "No se pudo registrar el usuario, por favor intenta mas tarde",
+                                            Toast.LENGTH_LONG
+                                        ).show()
+                                    }
+                                }
+                        }
+                        startActivity(intent)
+                    }
+            } else {
+                Toast.makeText(this, it.exception.toString(), Toast.LENGTH_LONG).show()
             }
         }
     }
 }
+
