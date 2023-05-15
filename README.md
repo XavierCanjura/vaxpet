@@ -15,8 +15,8 @@
 - [Notion](https://meteor-nut-4a6.notion.site/Vax-Pet-dcef583536994951ba1de6ce6344ba3a)
 - [Documento Técnico](https://1drv.ms/b/s!Aq1JljT7tW-ugSUST_VGpg_dRfoG?e=LcbULi)
 - [Sitio Web](https://vaxpet.netlify.app/)
-- [Manual Técnico]()
-- [Manual de Usuario]()
+- [Manual Técnico](https://1drv.ms/b/s!Aq1JljT7tW-ugWzUqErHpl_-nZ2n?e=P6PI8C)
+- [Manual de Usuario](https://1drv.ms/b/s!Aq1JljT7tW-ugW02Z2wQdSO-gVXC?e=O53cJi)
 
 ### Licencia
 ---
