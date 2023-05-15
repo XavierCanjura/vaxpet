@@ -177,7 +177,7 @@ class MantMascotaActivity : AppCompatActivity() {
 
         var time = System.currentTimeMillis()
         mascotaData.setId(time.toString())
-        mascotaData.setIdPropietario("HRm1DvtEODVFwwuL6ffSr5LfR9b2")
+        mascotaData.setIdPropietario(idPropietario)
         mascotaData.setNombre(nombre)
         mascotaData.setRaza(raza)
         mascotaData.setSexo(sexo)
