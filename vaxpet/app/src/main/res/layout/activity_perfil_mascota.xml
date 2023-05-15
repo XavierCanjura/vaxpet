@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:padding="20dp"
+    tools:context=".Perfil">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--imagen-->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            >
+
+            <ImageView
+                android:id="@+id/ivFotoMascota"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cornerRadius="30dp"
+                tools:background="@drawable/perfil1" />
+
+            <Button
+                android:id="@+id/atras2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:drawableLeft="@drawable/back1" />
+
+            <Button
+                android:id="@+id/atras"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:drawableLeft="@drawable/back1" />
+
+        </FrameLayout>
+
+
+        <!--nombre + editar-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvNombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="El Nombre"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="1dp" />
+
+            <Button
+                android:id="@+id/btnEditar"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_gravity="right"
+                android:background="@drawable/editar"
+                android:backgroundTint="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--edad y raza-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="7dp"
+            >
+
+            <TextView
+                android:id="@+id/tvEdad"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:background="@drawable/rounded_corner"
+                android:backgroundTint="@color/edad"
+                android:text="1 año"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvRaza"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="8dp"
+                android:background="@drawable/rounded_corner"
+                android:layout_marginStart="10dp"
+                android:backgroundTint="@color/raza"
+                android:text="Husky Siberiano"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <!--descripcioon-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            >
+
+            <TextView
+                android:id="@+id/tvDescripcion"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="8dp"
+                android:layout_marginStart="10dp"
+                android:backgroundTint="@color/raza"
+                android:text="The kindest Samoyed we've ever met. Likes to play with balls, is friends with other animals. Despite the white color, he loves rain and puddles."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <!--boton de vacuna-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="111dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+            <Button
+                android:id="@+id/citas"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:minWidth="226dp"
+                android:backgroundTint="@color/brown"
+                android:text="Crear cita"
+                app:cornerRadius="20dp"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
