@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/pink"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:padding="20dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="30dp">
+
+
+        <ImageView
+            android:id="@+id/backgroundImage"
+            android:layout_width="match_parent"
+            android:layout_height="266dp"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/logopink" />
+
+        <ImageView
+            android:id="@+id/foregroundImage"
+            android:layout_width="170dp"
+            android:layout_height="90dp"
+            android:src="@drawable/huellas" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VaxPet"
+            android:textColor="@color/black"
+            android:textSize="34sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="320dp"
+        tools:layout_editor_absoluteX="59dp"
+        tools:layout_editor_absoluteY="357dp"
+       >
+
+        <TextView
+            android:id="@+id/textCorreoElectronico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:text="@string/correo_electronico"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="489dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:layout_marginBottom="14dp"
+            />
+
+        <EditText
+            android:id="@+id/correoElectronico"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteX="23dp"
+            tools:layout_editor_absoluteY="504dp"
+            android:height="50dp"
+            android:minHeight="50dp"
+            android:width="330dp"
+            android:background="@drawable/rounded_corner"
+            android:padding="10dp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="420dp"
+        tools:layout_editor_absoluteX="59dp"
+        tools:layout_editor_absoluteY="357dp"
+        >
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:text="@string/contrase_a"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="489dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:layout_marginBottom="14dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordLayout"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:passwordToggleEnabled="true"
+            android:height="50dp"
+            android:minHeight="50dp"
+            android:minWidth="400dp"
+            tools:layout_editor_absoluteX="23dp"
+            tools:layout_editor_absoluteY="504dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTexContraseña"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:background="@drawable/rounded_corner"
+               />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="410dp"
+        tools:layout_editor_absoluteX="59dp"
+        tools:layout_editor_absoluteY="357dp"
+        android:gravity="center"
+        >
+
+        <android.widget.Button
+            android:id="@+id/iniciarSession"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/blue"
+            android:background="@drawable/button_rounded_corner"
+            android:minWidth="226dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:text="@string/iniciar_sesi_n"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="520dp"
+        tools:layout_editor_absoluteX="59dp"
+        tools:layout_editor_absoluteY="357dp"
+        android:gravity="center"
+        >
+
+        <android.widget.Button
+            android:id="@+id/crearCuenta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_rounded_corner"
+            android:minWidth="226dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:backgroundTint="@color/brown"
+            android:text="@string/crear_cuenta"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="630dp"
+        tools:layout_editor_absoluteX="59dp"
+        tools:layout_editor_absoluteY="357dp"
+        android:gravity="center"
+        >
+
+        <android.widget.Button
+            android:id="@+id/sesionGoogle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_rounded_corner"
+            android:minWidth="226dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:backgroundTint="@color/contornoGris"
+            android:text="@string/ingresar_con_google"
+            />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

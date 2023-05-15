@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">VaxPet</string>
+    <string name="correo_electronico">Email</string>
+    <string name="contrase_a">Password</string>
+    <string name="confirmar_contrase_a">Confirm Password</string>
+    <string name="iniciar_sesi_n">Login</string>
+    <string name="nombres">Name</string>
+    <string name="apellidos">Last Name</string>
+    <string name="telefono">Telephone</string>
+    <string name="registrar">Register</string>
+    <string name="cancelar">Cancel</string>
+    <string name="crear_cuenta">Create Account</string>
+    <string name="cuenta_nueva">New Account</string>
+
+    <string name="nombre_mascota">Pet Name</string>
+    <string name="tipo">Pet type</string>
+    <string name="raza">Pet Breed</string>
+    <string name="sexo">Genre</string>
+    <string name="fecha_nacimiento">Birthdate</string>
+    <string name="Descripcion">Description</string>
+    <string name="guardar">Save</string>
+    <string name="actualizar">Update</string>
+
+    <string name="btnCerrarSesion">Logout</string>
+    <string name="btnEditarCuenta">Edit Account</string>
+    <string name="tvNombres">First Name</string>
+    <string name="tvapellidos">Last Name</string>
+    <string name="tvtelefono">Phone Number</string>
+    <string name="tvCorreoElectronico">Email Address</string>
+    <string name="tvContrasena">Password</string>
+    <string name="tvConfirmarContrasena">Confirm Password</string>
+    <string name="btnGuardarEditarPerfil">Save</string>
+    <string name="txtSeleccionarFoto">Select an image</string>
+    <string name="hintCorreoElectronico">Enter your email address</string>
+    <string name="hintTelefono">Enter your phone number</string>
+    <string name="hintApellido">Enter your last name</string>
+    <string name="hintNombre">Enter your first name</string>
+    <string name="ingresar_con_google">Sing in with Google</string>
+    <string name="favoritos">Favorites</string>
+    <string name="citas">Dates</string>
+    <string name="perfil">Profile</string>
+    <string name="todo">All</string>
+    <string name="gato">Cats</string>
+    <string name="perro">Dogs</string>
+    <string name="activar_idioma_ingles">Activate English language</string>
+    <string name="activar_idioma_espa_ol">Activate Spanish language</string>
+
+    <string name="regresar">Go to Home</string>
+    <string name="eslogan">Para huellitas sanas</string>
+    <string name="comenzar">Start</string>
+</resources>

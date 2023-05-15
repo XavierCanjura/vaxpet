@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">VaxPet</string>
+    <string name="correo_electronico">Correo Electronico</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="confirmar_contrase_a">Confirmar Contraseña</string>
+    <string name="iniciar_sesi_n">Iniciar Sesión</string>
+    <string name="nombres">Nombres</string>
+    <string name="apellidos">Apellidos</string>
+    <string name="telefono">Telefono</string>
+    <string name="registrar">Registrar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="crear_cuenta">Crear Cuenta</string>
+    <string name="cuenta_nueva">Cuenta Nueva</string>
+
+    <string name="nombre_mascota">Nombre de la mascota</string>
+    <string name="tipo">Tipo de mascota</string>
+    <string name="raza">Raza</string>
+    <string name="sexo">Sexo</string>
+    <string name="fecha_nacimiento">Fecha de Nacimiento</string>
+    <string name="Descripcion">Descripcion</string>
+    <string name="guardar">Guardar</string>
+    <string name="actualizar">Actualizar</string>
+
+    <string name="btnCerrarSesion">Cerrar Sesión</string>
+    <string name="btnEditarCuenta">Editar cuenta</string>
+    <string name="tvNombres">Nombres</string>
+    <string name="tvapellidos">Apellidos</string>
+    <string name="tvtelefono">Teléfono</string>
+    <string name="tvCorreoElectronico">Correo Electrónico</string>
+    <string name="tvContrasena">Contraseña</string>
+    <string name="tvConfirmarContrasena">Confirmar contraseña</string>
+    <string name="btnGuardarEditarPerfil">Guardar</string>
+    <string name="txtSeleccionarFoto">Seleccione una foto</string>
+    <string name="hintCorreoElectronico">Ingrese su correo electrónico</string>
+    <string name="hintTelefono">Ingrese su número de teléfono</string>
+    <string name="hintApellido">Ingrese su apellido</string>
+    <string name="hintNombre">Ingrese su nombre</string>
+    <string name="ingresar_con_google">Ingresar con Google</string>
+    <string name="activar_idioma_ingles">Activar Idioma Ingles</string>
+    <string name="favoritos">Favoritos</string>
+    <string name="citas">Citas</string>
+    <string name="perfil">Perfil</string>
+    <string name="activar_idioma_espa_ol">Activar idioma español</string>
+    <string name="todo">Todo</string>
+    <string name="perro">Perro</string>
+    <string name="gato">Gato</string>
+
+    <string name="regresar">Ir al Inicio</string>
+    <string name="eslogan">Para huellitas sanas</string>
+    <string name="comenzar">Comenzar</string>
+</resources>

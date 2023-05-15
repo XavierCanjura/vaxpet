@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Home"
+        android:id="@+id/home"
+        android:icon="@drawable/baseline_home_24"/>
+
+<!--    <item android:title="@string/favoritos"-->
+<!--        android:id="@+id/favoritos"-->
+<!--        android:icon="@drawable/baseline_star_border_24"/>-->
+
+    <item android:title="@string/citas"
+        android:id="@+id/citas"
+        android:icon="@drawable/baseline_calendar_month_24"/>
+
+    <item android:title="@string/perfil"
+        android:id="@+id/perfil"
+        android:icon="@drawable/baseline_person_24"/>
+</menu>
