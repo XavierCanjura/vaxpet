@@ -14,6 +14,7 @@
     <string name="cuenta_nueva">New Account</string>
 
     <string name="nombre_mascota">Pet Name</string>
+    <string name="tipo">Pet type</string>
     <string name="raza">Pet Breed</string>
     <string name="sexo">Genre</string>
     <string name="fecha_nacimiento">Birthdate</string>
@@ -36,4 +37,16 @@
     <string name="hintApellido">Enter your last name</string>
     <string name="hintNombre">Enter your first name</string>
     <string name="ingresar_con_google">Sing in with Google</string>
+    <string name="favoritos">Favorites</string>
+    <string name="citas">Dates</string>
+    <string name="perfil">Profile</string>
+    <string name="todo">All</string>
+    <string name="gato">Cats</string>
+    <string name="perro">Dogs</string>
+    <string name="activar_idioma_ingles">Activate English language</string>
+    <string name="activar_idioma_espa_ol">Activate Spanish language</string>
+
+    <string name="regresar">Go to Home</string>
+    <string name="eslogan">Para huellitas sanas</string>
+    <string name="comenzar">Start</string>
 </resources>

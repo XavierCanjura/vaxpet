@@ -9,10 +9,11 @@ class mascotaData {
     private var fecha_nacimineto: String? = null
     private var descripcion: String? = null
     private var imagen: String? = null
+    private var tipo: String? = null
 
     constructor(){}
 
-    constructor(id: String?, idPropietario: String, nombre: String, raza: String, sexo: String, fechaNacimiento: String, descripcion: String, imagen: String)
+    constructor(id: String?, idPropietario: String, nombre: String, raza: String, sexo: String, fechaNacimiento: String, descripcion: String, imagen: String, tipo: String)
     {
         this.id = id
         this.idPropietario = idPropietario
@@ -22,6 +23,7 @@ class mascotaData {
         this.fecha_nacimineto = fechaNacimiento
         this.descripcion = descripcion
         this.imagen = imagen
+        this.tipo = tipo
     }
 
     fun getPath(): String{
@@ -101,5 +103,14 @@ class mascotaData {
 
     fun getImagen(): String? {
         return this.imagen
+    }
+
+    //For tipo
+    fun setTipo(tipo: String){
+        this.tipo = tipo
+    }
+
+    fun getTipo(): String? {
+        return this.tipo
     }
 }
