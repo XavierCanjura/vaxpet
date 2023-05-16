@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import com.example.desafiopractico2.usuarioData
@@ -19,6 +20,7 @@ class RegistroActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegistroBinding
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var ImageUri: Uri
+    private lateinit var FirebaseImageUri: String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -95,7 +97,7 @@ class RegistroActivity : AppCompatActivity() {
                     .addOnCompleteListener {
                         if (it.isSuccessful) {
 
-                            uploadIamge()
+                            //uploadIamge()
                             usuarioData.setid(it.getResult().user?.uid.toString()) //guardo uid del usuariorecien creado
                             firebaseReference.child("usuarios").push().setValue(usuarioData)
                                 .addOnCompleteListener {
@@ -129,11 +131,14 @@ class RegistroActivity : AppCompatActivity() {
     }
 
     private fun uploadIamge() {
+        Log.d("ver aca---->", ImageUri.toString())
+        Log.d("ver aca---->", Uri.EMPTY.equals(ImageUri).toString())
         if (!Uri.EMPTY.equals(ImageUri)) {
             val random = java.util.Random()
             val fileName = "image00-" + random.nextInt().toString()
             val storageReference = FirebaseStorage.getInstance().getReference("images/" + fileName)
             storageReference.putFile(ImageUri).addOnSuccessListener {
+
             }
         }
 
@@ -149,8 +154,25 @@ class RegistroActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 100 && resultCode == RESULT_OK) {
+
             ImageUri = data?.data!!
             binding.imageView.setImageURI(ImageUri)
+
+            if (!Uri.EMPTY.equals(ImageUri)) {
+
+                val random = java.util.Random()
+                val fileName = "imageProfile00-" + random.nextInt().toString()
+                val storageReference =
+                    FirebaseStorage.getInstance().getReference("images/" + fileName)
+                storageReference.putFile(ImageUri).addOnSuccessListener { task ->
+                    if (task.task.isSuccessful) {
+                        val downloadUri = task.task.result
+                        FirebaseImageUri = downloadUri.uploadSessionUri.toString()
+                    } else {
+
+                    }
+                }
+            }
         }
     }
 
